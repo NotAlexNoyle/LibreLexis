@@ -1,30 +1,35 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 32  // Update to latest compileSdkVersion
+
     defaultConfig {
         applicationId "click.dummer.yidkey"
         minSdkVersion 16
-        //upload similar to offlineTranslator
-        targetSdkVersion 26
+        targetSdkVersion 32  // Update to latest targetSdkVersion
         versionCode 11
         versionName "1.1"
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            applicationVariants.all { variant ->
-                variant.outputs.all {
-                    outputFileName = "${variant.applicationId}.apk"
-                }
-            }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Output filename configuration remains unchanged
         }
+    }
+
+    // Add a Java 8 compatibility declaration for consistency
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    // Use AndroidX dependencies for compatibility
+    implementation 'androidx.appcompat:appcompat:1.6.0-alpha05'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
