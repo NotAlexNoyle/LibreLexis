@@ -1,29 +1,34 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'  // Updated Android Gradle plugin
+   repositories {
+       google()
+       mavenCentral()
+   }
+   dependencies {
+       classpath 'com.android.tools.build:gradle:8.2.2'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+       // NOTE: Do not place your application dependencies here; they belong
+       // in the individual module build.gradle files
+   }
 }
 
 plugins {
-    id 'eclipse'  // Updated Eclipse plugin version
+   id 'eclipse' // Assuming compatibility with Gradle 8.5, otherwise update
 }
 
 allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+   repositories {
+       google()
+       mavenCentral()
+   }
+}
+
+// Configure Java compatibility for Java 17
+tasks.withType(JavaCompile) {
+   options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+   sourceCompatibility = JavaVersion.VERSION_17
+   targetCompatibility = JavaVersion.VERSION_17
 }
 
 task clean(type: Delete) {
-    delete rootProject.buildDir
+   delete rootProject.buildDir
 }

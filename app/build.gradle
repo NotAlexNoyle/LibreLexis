@@ -1,35 +1,42 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33  // Updated to the latest compileSdkVersion
+   compileSdkVersion 33 // Updated to the latest compileSdkVersion
 
-    defaultConfig {
-        applicationId "click.dummer.yidkey"
-        minSdkVersion 16
-        targetSdkVersion 33  // Updated to the latest targetSdkVersion
-        versionCode 11
-        versionName "1.1"
-    }
+   defaultConfig {
+       applicationId "click.dummer.yidkey"
+       minSdkVersion 16
+       targetSdkVersion 33 // Updated to the latest targetSdkVersion
+       versionCode 11
+       versionName "1.1"
+   }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            // Output filename configuration remains unchanged
-        }
-    }
+   buildTypes {
+       release {
+           minifyEnabled false
+           proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+           // Output filename configuration remains unchanged
+       }
+   }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    namespace 'click.dummer.yidkey.uglykeyb'
+   compileOptions {
+       sourceCompatibility JavaVersion.VERSION_17 // Updated for Java 17
+       targetCompatibility JavaVersion.VERSION_17 // Updated for Java 17
+   }
+
+   namespace 'click.dummer.yidkey.uglykeyb'
+}
+
+repositories {
+   google()
+   mavenCentral()
+   maven { url 'https://jitpack.io' } // Add Jitpack repository
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+   implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Updated AndroidX dependencies for compatibility
-    implementation 'androidx.appcompat:appcompat:1.6.0'  // Updated version
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+   // Assuming these are available on Jitpack:
+   implementation 'androidx.appcompat:appcompat:1.6.1'
+   implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
