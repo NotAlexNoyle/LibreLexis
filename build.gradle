@@ -3,10 +3,10 @@
 buildscript {
     repositories {
         google()
-        mavenCentral()  // Use mavenCentral instead of jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'  // Update Android Gradle plugin
+        classpath 'com.android.tools.build:gradle:7.4.2'  // Updated Android Gradle plugin
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -14,13 +14,13 @@ buildscript {
 }
 
 plugins {
-    id 'eclipse' // Or another compatible version
+    id 'eclipse'  // Updated Eclipse plugin version
 }
 
 allprojects {
     repositories {
         google()
-        mavenCentral()  // Use mavenCentral instead of jcenter()
+        mavenCentral()
     }
 }
 

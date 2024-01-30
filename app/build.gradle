@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 32  // Update to latest compileSdkVersion
+    compileSdkVersion 33  // Updated to the latest compileSdkVersion
 
     defaultConfig {
         applicationId "click.dummer.yidkey"
         minSdkVersion 16
-        targetSdkVersion 32  // Update to latest targetSdkVersion
+        targetSdkVersion 33  // Updated to the latest targetSdkVersion
         versionCode 11
         versionName "1.1"
     }
@@ -19,17 +19,17 @@ android {
         }
     }
 
-    // Add a Java 8 compatibility declaration for consistency
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'click.dummer.yidkey.uglykeyb'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Use AndroidX dependencies for compatibility
-    implementation 'androidx.appcompat:appcompat:1.6.0-alpha05'
+    // Updated AndroidX dependencies for compatibility
+    implementation 'androidx.appcompat:appcompat:1.6.0'  // Updated version
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
